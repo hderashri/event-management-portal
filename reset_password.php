@@ -7,8 +7,8 @@ require_once('db_connection.php');
     $cpassword = trim($_POST['confirm_password']);
     $pwd = MD5($password);
 
-    //$conn = mysqli_connect("localhost","root","","Event Portal");
-    $conn = mysqli_connect("remotemysql.com","F6wy4ESYJR","ZUI1AztbHy","F6wy4ESYJR");
+    $conn = mysqli_connect("localhost","root","","Event Portal");
+    //$conn = mysqli_connect("remotemysql.com","F6wy4ESYJR","ZUI1AztbHy","F6wy4ESYJR");
 
     if (mysqli_connect_errno()) {
      echo "Failed to connect to MySQL: " . mysqli_connect_error();
