@@ -1,15 +1,15 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-// define('DB_SERVER', 'localhost');
-// define('DB_USERNAME', 'root');
-// define('DB_PASSWORD', '');
-// define('DB_NAME', 'Event Portal');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'Event Portal');
 
-define('DB_SERVER', 'remotemysql.com');
-define('DB_USERNAME', 'F6wy4ESYJR');
-define('DB_PASSWORD', 'ZUI1AztbHy');
-define('DB_NAME', 'F6wy4ESYJR');
+// define('DB_SERVER', 'remotemysql.com');
+// define('DB_USERNAME', 'F6wy4ESYJR');
+// define('DB_PASSWORD', 'ZUI1AztbHy');
+// define('DB_NAME', 'F6wy4ESYJR');
  
 /* Attempt to connect to MySQL database */
 $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
