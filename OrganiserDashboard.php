@@ -10,26 +10,26 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 $name = $_SESSION['name'];
-$query = "SELECT * FROM Events WHERE Event_Creator = '".$name."'";  
+$query = "SELECT * FROM events WHERE Event_Creator = '".$name."'";  
  $result = mysqli_query($conn, $query);
 $query1 = "SELECT Event_Name FROM Events";  
 $result1 = mysqli_query($conn, $query);
 
 $today = date("y-m-d");
 $count1 = $count2 = $count3 = $count4 = 0;
-$stmt1 = "SELECT * FROM Events";  
+$stmt1 = "SELECT * FROM events";  
 $res1 = mysqli_query($conn, $stmt1);
 $count1 = mysqli_num_rows($res1);
 
-$stmt2 = "SELECT Event_Date FROM Events WHERE Event_Date >= '".$today."'";  
+$stmt2 = "SELECT Event_Date FROM events WHERE Event_Date >= '".$today."'";  
 $res2 = mysqli_query($conn, $stmt2);
 $count2 = mysqli_num_rows($res2);
 
-$stmt3 = "SELECT Event_Date FROM Events WHERE Event_Date < '".$today."'";  
+$stmt3 = "SELECT Event_Date FROM events WHERE Event_Date < '".$today."'";  
 $res3 = mysqli_query($conn, $stmt3);
 $count3 = mysqli_num_rows($res3);
 
-$stmt4 = "SELECT * FROM Participants where Event_Creator = '".$name."'";  
+$stmt4 = "SELECT * FROM participants where Event_Creator = '".$name."'";  
 $res4 = mysqli_query($conn, $stmt4);
 $count4 = mysqli_num_rows($res4);
 ?>
@@ -447,7 +447,7 @@ $count4 = mysqli_num_rows($res4);
 						</thead>
 						<tbody>
 						<?php  
-                                        $query3 = "SELECT * FROM Participants WHERE Event_Name = '".$eventname."'";  
+                                        $query3 = "SELECT * FROM participants WHERE Event_Name = '".$eventname."'";  
                                         $result3 = mysqli_query($conn, $query3);
                         		         while($row = mysqli_fetch_array($result3))  
                          		        { 
