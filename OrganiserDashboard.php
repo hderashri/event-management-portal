@@ -12,7 +12,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 $name = $_SESSION['name'];
 $query = "SELECT * FROM events WHERE Event_Creator = '".$name."'";  
  $result = mysqli_query($conn, $query);
-$query1 = "SELECT Event_Name FROM Events";  
+$query1 = "SELECT Event_Name FROM events";  
 $result1 = mysqli_query($conn, $query);
 
 $today = date("y-m-d");
