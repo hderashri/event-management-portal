@@ -1,8 +1,8 @@
 <?php 
 	session_start();
 	include('db_connection.php');
-	$conn = mysqli_connect("localhost","root","","Event Portal");
-	//$conn = mysqli_connect("remotemysql.com","F6wy4ESYJR","ZUI1AztbHy","F6wy4ESYJR");
+	//$conn = mysqli_connect("localhost","root","","Event Portal");
+	$conn = mysqli_connect("remotemysql.com","F6wy4ESYJR","ZUI1AztbHy","F6wy4ESYJR");
 	if (mysqli_connect_errno()) {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	exit(); }
@@ -30,7 +30,7 @@
 		$mobile = trim($_SESSION['Mobile_no']);
 		$team_members = trim($_SESSION['Team_Members']);
 
-		$sql = "INSERT INTO Participants (Participant_Name,Username,Email,Mobile,Team_Members,Event_Name,Event_Creator) VALUES ('$participant_name','$username','$email','$mobile','$team_members','$event_name','$event_creator')";
+		$sql = "INSERT INTO participants (Participant_Name,Username,Email,Mobile,Team_Members,Event_Name,Event_Creator) VALUES ('$participant_name','$username','$email','$mobile','$team_members','$event_name','$event_creator')";
 		$result = mysqli_query($conn, $sql);
 		if($result)
 		{
