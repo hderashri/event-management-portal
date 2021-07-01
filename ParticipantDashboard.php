@@ -10,8 +10,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: index.php");
     exit;
 }
-$query1 = "SELECT * FROM events GROUP BY Event_Creator";  
-//$query1 = "SELECT * FROM events";
+//$query1 = "SELECT * FROM events GROUP BY Event_Creator";  
+$query1 = "SELECT * FROM events";
 $result1 = mysqli_query($conn, $query1);
 
 ?>
