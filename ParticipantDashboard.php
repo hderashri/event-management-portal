@@ -9,7 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: index.php");
     exit;
 }
-$query1 = "SELECT * FROM Events GROUP BY Event_Creator";  
+$query1 = "SELECT * FROM events GROUP BY Event_Creator";  
 $result1 = mysqli_query($conn, $query1);
 
 ?>
@@ -161,7 +161,7 @@ $result1 = mysqli_query($conn, $query1);
 						</thead>
 						<tbody>
                         <?php  
-                                $query2 = "SELECT * FROM Events WHERE Event_Creator = '".$creator."'";  
+                                $query2 = "SELECT * FROM events WHERE Event_Creator = '".$creator."'";  
                                 $result2 = mysqli_query($conn, $query2);
                         		 while($row = mysqli_fetch_array($result2))  
                          		{ 
@@ -241,7 +241,7 @@ $result1 = mysqli_query($conn, $query1);
 							<select name="EventCreator" id="event_creator" required>
 								<option value="">Select Organization</option>
 								<?php
-										$query4 = "SELECT Event_Creator FROM Events GROUP BY Event_Creator";  
+										$query4 = "SELECT Event_Creator FROM events GROUP BY Event_Creator";  
 										$result4 = mysqli_query($conn, $query4);
 										while($row = mysqli_fetch_array($result4))  
 										{ 
@@ -324,7 +324,7 @@ $result1 = mysqli_query($conn, $query1);
                                     <tbody>
                                        <?php  
                                         $username = $_SESSION['email'];
-                                        $query3 = "SELECT * FROM Participants WHERE Username = '".$username."'";  
+                                        $query3 = "SELECT * FROM participants WHERE Username = '".$username."'";  
                                         $result3 = mysqli_query($conn, $query3);
                         		         while($row = mysqli_fetch_array($result3))  
                          		        { 
