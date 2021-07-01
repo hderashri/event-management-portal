@@ -36,7 +36,7 @@ if($last_date > $event_date)
 }
 else
 {
-$sql = "INSERT INTO Events (Event_Creator,Event_Name,Short_Description,Entry_fees,Event_Coordinators,Prize,Event_Rules,Participant_Type,Last_Date,Event_Date) VALUES ('$event_creator','$event_name','$short_description','$entry_fees','$event_coordinators','$prize','$event_rules','$participant_type','$last_date','$event_date')";
+$sql = "INSERT INTO events (Event_Creator,Event_Name,Short_Description,Entry_fees,Event_Coordinators,Prize,Event_Rules,Participant_Type,Last_Date,Event_Date) VALUES ('$event_creator','$event_name','$short_description','$entry_fees','$event_coordinators','$prize','$event_rules','$participant_type','$last_date','$event_date')";
 $result = mysqli_query($conn, $sql);
 if($result)
 {
