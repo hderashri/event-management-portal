@@ -1,7 +1,7 @@
 <?php
 require_once('db_connection.php');
-$conn = mysqli_connect("localhost","root","","Event Portal");
-//$conn = mysqli_connect("remotemysql.com","F6wy4ESYJR","ZUI1AztbHy","F6wy4ESYJR");
+//$conn = mysqli_connect("localhost","root","","Event Portal");
+$conn = mysqli_connect("remotemysql.com","F6wy4ESYJR","ZUI1AztbHy","F6wy4ESYJR");
 
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -11,7 +11,7 @@ $username = $password = $pwd = '';
 $username = trim($_POST['email']);
 $pwd = trim($_POST['password']);
 $password = MD5($pwd);
-$sql = "SELECT * FROM Users WHERE Username='$username' AND Password='$password'";
+$sql = "SELECT * FROM users WHERE Username='$username' AND Password='$password'";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0)
 {
