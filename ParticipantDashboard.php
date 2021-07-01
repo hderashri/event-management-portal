@@ -11,7 +11,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 //$query1 = "SELECT * FROM events GROUP BY Event_Creator";  
-$query1 = "SELECT * FROM events";
+$query1 = "SELECT DISTINCT * FROM events";
 $result1 = mysqli_query($conn, $query1);
 
 ?>
