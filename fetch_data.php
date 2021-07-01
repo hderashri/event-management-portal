@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once('db_connection.php');
-$conn = mysqli_connect("localhost","root","","Event Portal");
-//$conn = mysqli_connect("remotemysql.com","F6wy4ESYJR","ZUI1AztbHy","F6wy4ESYJR");
+//$conn = mysqli_connect("localhost","root","","Event Portal");
+$conn = mysqli_connect("remotemysql.com","F6wy4ESYJR","ZUI1AztbHy","F6wy4ESYJR");
 
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -12,7 +12,7 @@ if(isset($_POST['checking_viewbtn']))
 {
     $event_name = $_POST['EventName'];
 
-    $query = "SELECT * FROM Events WHERE Event_Name = '".$event_name."'";  
+    $query = "SELECT * FROM events WHERE Event_Name = '".$event_name."'";  
     $result = mysqli_query($conn, $query);
     while($row = mysqli_fetch_array($result))  
     { 
@@ -28,7 +28,7 @@ if(isset($_POST['checking_editbtn']))
 {
     $event_name = $_POST['EventName'];
 
-    $query = "SELECT * FROM Events WHERE Event_Name = '".$event_name."'";  
+    $query = "SELECT * FROM events WHERE Event_Name = '".$event_name."'";  
     $result = mysqli_query($conn, $query);
     while($row = mysqli_fetch_array($result))  
     { 
@@ -48,7 +48,7 @@ if(isset($_POST['checking_updatebtn']))
     $event_date = $_POST['event_date'];
     $last_date = $_POST['last_date'];
 
-    $query = "UPDATE Events SET Event_Coordinators='".$event_coordinators."',Entry_fees='".$entry_fees."',Prize='".$prize."',Short_Description='".$description."',Participant_Type='".$team_size."',Event_Rules='".$event_rules."',Event_Date='".$event_date."',Last_date='".$last_date."' WHERE Event_Name='".$event_name."'";  
+    $query = "UPDATE events SET Event_Coordinators='".$event_coordinators."',Entry_fees='".$entry_fees."',Prize='".$prize."',Short_Description='".$description."',Participant_Type='".$team_size."',Event_Rules='".$event_rules."',Event_Date='".$event_date."',Last_date='".$last_date."' WHERE Event_Name='".$event_name."'";  
     $result = mysqli_query($conn, $query);
     if($result)
     {
