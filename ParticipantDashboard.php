@@ -146,8 +146,8 @@ $result1 = mysqli_query($conn, $query1);
                  while($row = mysqli_fetch_array($result1))  
                  { 
 			?>
-<!-- 				<details>
-					<summary><//?php $creator = $row['Event_Creator']; echo $row['Event_Creator'] ?></summary> -->
+				<details>
+					<summary><?php $creator = $row['Event_Creator']; echo $row['Event_Creator'] ?></summary>
 					<table>
 						<thead>
 							<tr>
@@ -189,8 +189,8 @@ $result1 = mysqli_query($conn, $query1);
 								 ?>
 						</tbody>
 					</table>
-<!-- 				</details>
-				 -->
+				</details>
+				
 			<?php
 				}
 			?>
